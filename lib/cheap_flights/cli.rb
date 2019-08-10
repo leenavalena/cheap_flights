@@ -1,40 +1,49 @@
 class CheapFlights::CLI
 
     def call 
-        greeting
-        list_flights
+        greeting 
+        list_seasons
         menu
-        goodbye
+        farewell
     end
 
-    def greeting 
-        puts "Welcome! Looking to travel soon? I might be able to help out with that..."
-    end 
+    def greeting
+        puts "                   Welcome! 
+Looking to travel soon? I might be able to help you with that..."
+    end
 
-    def list_flights
-        #here doc
-        puts "What time of the year are you planning to travel? Enter a number."
+    def list_seasons
+       
+        puts "Let's travel somewhere in the:"
+        puts <<-DOC 
         1. Winter
         2. Spring 
         3. Summer
         4. Fall 
+      DOC
     end 
 
     def menu
+        puts "
+ What time of the year are you looking to travel? Enter a number to see a deal or type 'exit' to leave."
         input = nil
-        while != "exit"
-            when "1" 
-                puts "Let's go somewhere this Winter!"
-            when "2"
-                puts "Let's go somewhere this Spring!"
+        while input != "exit"
+        input = gets.strip.downcase
+            case input 
+            when "1"
+                puts "Winter special"
+            when "2" 
+                puts "Spring special"
             when "3"
-                puts "Let's go somewhere this Summer!"
+                puts "Summer Special"
             when "4"
-                puts "Let's go somewhere this Fall!"
+                puts "Fall special"
             end
-        end 
-    end 
+          end
+        end
+      end
 
-    def goodbye 
-        puts "Safe travel! :)"
-    end 
+      def farewell
+        puts "Safe travels! :)"
+      end 
+

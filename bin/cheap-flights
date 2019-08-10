@@ -1,5 +1,5 @@
-!/usr/bin/env ruby
-require_relative './lib/cheap_flights'
+#!/usr/bin/env ruby
+require './lib/cheap_flights'
 
 CheapFlights::CLI.new.call 
 
