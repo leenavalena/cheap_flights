@@ -25,7 +25,7 @@ Looking to travel soon? I might be able to help you with that..."
 
     def menu
         puts "
- What time of the year are you looking to travel? Enter a number to see a deal or type 'exit' to leave."
+ What time of the year are you looking to travel? Enter a number to see a deal, type 'list' to look at the seasons, or type 'exit' to leave."
         input = nil
         while input != "exit"
         input = gets.strip.downcase
@@ -38,6 +38,8 @@ Looking to travel soon? I might be able to help you with that..."
                 puts "Summer Special"
             when "4"
                 puts "Fall special"
+            when "list"
+                list_seasons
             end
           end
         end
