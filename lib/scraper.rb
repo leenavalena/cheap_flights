@@ -1,9 +1,19 @@
+require "./cheap_flights/version"
+require 'nokogiri'
+require 'open-uri'
+
 class Scraper
 
-    def call
-        puts 'call is running'
-    end
+    def self.scrape_flights
+        flights = []
+        doc = Nokogiri::HTML(open("https://www.theflightdeal.com/page/3/"))
+        list_flights = doc.
+    end 
 
-    page = open("https://www.theflightdeal.com/category/flight-deals/")
-    doc = Nokogiri::HTML(page)
+    def print_first_title
+        first_title = self.get_page.css("div#ctitle").first.text
+        puts first_title
+    end
 end 
+
+Scraper.new.print_first_title
