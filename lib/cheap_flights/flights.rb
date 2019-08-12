@@ -20,7 +20,7 @@ class CheapFlights::Flights
     end
 
     def self.scrape_flightdeal
-        doc = Nokogiri::HTML(open("https://www.theflightdeal.com/category/flight-deals/nyc/"))
+        doc = Nokogiri::HTML(open("https://www.theflightdeal.com/category/flight-deals/"))
         binding.pry
     end
 end 
