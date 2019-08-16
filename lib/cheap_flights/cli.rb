@@ -29,7 +29,7 @@ Looking to travel soon? I might be able to help you with that...".colorize(:yell
 
     def menu
         puts "
- What time of the year are you looking to travel? Enter a number to see a deal, type 'list' to look at the seasons, or type 'exit' to leave."
+ What time of the year are you looking to travel? Enter a number to see a deal, type 'list' to look at the seasons, or type 'exit' to leave.".colorize(:blue)
         input = nil
         while input != "exit"
         input = gets.strip.downcase
