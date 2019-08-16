@@ -29,19 +29,19 @@ Looking to travel soon? I might be able to help you with that...".colorize(:yell
 
     def menu
         puts "
- What time of the year are you looking to travel? Enter a number to see a deal, type 'list' to look at the seasons, or type 'exit' to leave.".colorize(:blue)
+ What time of the year are you looking to travel? Enter a number to see a deal, type 'list' to look at the seasons, or type 'exit' to leave.".colorize(:yellow)
         input = nil
         while input != "exit"
         input = gets.strip.downcase
             case input 
             when "1"
-                puts "Winter special".colorize(:blue)
+                puts "Winter special".colorize(:light_blue)
             when "2" 
-                puts "Spring special".colorize(:red)
+                puts "Spring special".colorize(:white)
             when "3"
-                puts "Summer Special".colorize(:red)
+                puts "Summer Special".colorize(:light_blue)
             when "4"
-                puts "Fall special".colorize(:light_blue)
+                puts "Fall special".colorize(:white)
             when "list"
                 list_seasons
             end
