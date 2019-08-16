@@ -1,20 +1,24 @@
+#  CLI Controller
+
+
 class CheapFlights::CLI
 
     def call 
         greeting 
         list_seasons
+        CheapFlights::Scraper.scrape_flightdeal
         menu
         farewell
     end
 
     def greeting
         puts "                   Welcome! 
-Looking to travel soon? I might be able to help you with that..."
+Looking to travel soon? I might be able to help you with that...".colorize(:yellow)
     end
 
     def list_seasons
        
-        puts "Let's travel somewhere in the:"
+        puts "Let's travel somewhere in the:".colorize(:white)
         puts <<-DOC 
         1. Winter
         2. Spring 
@@ -31,13 +35,13 @@ Looking to travel soon? I might be able to help you with that..."
         input = gets.strip.downcase
             case input 
             when "1"
-                puts "Winter special"
+                puts "Winter special".colorize(:blue)
             when "2" 
-                puts "Spring special"
+                puts "Spring special".colorize(:red)
             when "3"
-                puts "Summer Special"
+                puts "Summer Special".colorize(:red)
             when "4"
-                puts "Fall special"
+                puts "Fall special".colorize(:light_blue)
             when "list"
                 list_seasons
             end
@@ -46,6 +50,6 @@ Looking to travel soon? I might be able to help you with that..."
       end
 
       def farewell
-        puts "Safe travels! :)"
+        puts "Safe travels! :)".colorize(:yellow)
       end 
 

@@ -1,26 +1,17 @@
-class CheapFlights::Flights 
-    attr_accessor :location, :airline, :price, :url
-    
-    def self.available 
-        # Scrape theflightdeal and return flights based on the data 
-        self.scrape_flights
+# This modules turns flights into objects 
 
-      
+class CheapFlights::Flights
+    attr_accessor :titles, :url 
+    @@all = []
+
+    def initialize
+        @titles = titles
+        @url = url
+        @@all << self #saves the objects 
     end
 
-    def self.scrape_flights
-        flights = []
-
-        flights << self.scrape_flightdeal
-        # go to theflightdeal, find the flight specials
-        # extract the data 
-        # instantiate a flight
-
-        flights
+    def self.all
+        @@all
     end
+end
 
-    def self.scrape_flightdeal
-        doc = Nokogiri::HTML(open("https://www.theflightdeal.com/category/flight-deals/"))
-        binding.pry
-    end
-end 
