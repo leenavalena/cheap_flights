@@ -5,8 +5,6 @@ class CheapFlights::Flights
     @@all = []
 
     def initialize
-        @titles = titles
-        @url = url
         @@all << self #saves the objects 
     end
 
