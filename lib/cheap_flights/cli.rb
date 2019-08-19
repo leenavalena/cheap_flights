@@ -6,7 +6,7 @@ class CheapFlights::CLI
     def call 
         greeting 
         list_seasons
-        CheapFlights::Scraper.scrape_flight_titles
+        Scraper.scrape_flight_titles
         print_flight_titles
         menu
         farewell
@@ -38,19 +38,19 @@ Looking to travel soon? I might be able to help you with that...".colorize(:yell
             when "1"
                 puts "Winter special".colorize(:light_blue)
                 puts "--------------------------------------"
-                puts "Title: "
+                print_flight_titles
             when "2" 
                 puts "Spring special".colorize(:white)
                 puts "--------------------------------------"
-                puts "Title: {#"
+                print_flight_titles
             when "3"
                 puts "Summer Special".colorize(:light_blue)
                 puts "--------------------------------------"
-                puts "Title: "
+                print_flight_titles
             when "4"
                 puts "Fall special".colorize(:white)
                 puts "--------------------------------------"
-                puts "Title: "
+                print_flight_titles
             when "list"
                 list_seasons
             end
@@ -60,12 +60,8 @@ Looking to travel soon? I might be able to help you with that...".colorize(:yell
 
     def print_flight_titles
         Flights.all.each.with_index(1) do |flights, index|
-            puts "#{index}. #{flight.title}"
+         #   puts "#{index}. #{flights.title}"
     end
-
-    # def print_flight_url
-
-    # end
 
     def farewell
         puts "Safe travels! :)".colorize(:yellow)

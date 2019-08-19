@@ -1,6 +1,6 @@
 # This modules turns flights into objects 
 
-class CheapFlights::Flights
+class Flights
     attr_accessor :titles, :url 
     @@all = []
 
