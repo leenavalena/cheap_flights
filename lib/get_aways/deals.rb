@@ -1,6 +1,6 @@
-# This modules turns flights into objects 
+# This modules turns deals into objects 
 
-class Flights
+class Deals
     attr_accessor :titles, :url 
     @@all = []
 

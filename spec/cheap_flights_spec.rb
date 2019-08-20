@@ -1,6 +1,6 @@
-RSpec.describe CheapFlights do
+RSpec.describe GetAways do
   it "has a version number" do
-    expect(CheapFlights::VERSION).not_to be nil
+    expect(GetAways::VERSION).not_to be nil
   end
 
   it "does something useful" do

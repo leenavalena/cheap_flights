@@ -1,3 +1,3 @@
-module CheapFlights
+module GetAways
   VERSION = "0.1.0"
 end

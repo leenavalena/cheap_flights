@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "cheap_flights"
+require "get_aways"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

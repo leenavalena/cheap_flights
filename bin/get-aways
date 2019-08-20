@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require './lib/get_aways'
+
+GetAways::CLI.new.call 
+
