@@ -10,6 +10,6 @@ class Scraper
             doc.css(".cui-price-discount.c-txt-price").text #prices scrape
 
             url_list = doc.css("a.cui-content").map{|link|link.attr("href")} #lists urls 
-            binding.pry
+            
     end
 end

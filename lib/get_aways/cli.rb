@@ -16,15 +16,11 @@ class GetAways::CLI
 Looking for a get-away? I might be able to help you with that!".colorize(:light_blue)
     end
 
-    def list_deals
-        puts "#{index}. #{job.tile} - #{job.price} - #{job.url}"
-    end 
-
     def enter_number
-       input = gets.strip
-       while input != "exit" do 
-            puts "
- Choose a deal (by number) that you're interested in, type 'list' to look at other getaways, or type 'exit' to leave."
+        input = gets.strip
+        while input != "exit" do 
+             puts "
+  Choose a deal (by number) that you're interested in, type 'list' to look at other getaways, or type 'exit' to leave."
     end
 
     def menu
@@ -39,7 +35,8 @@ Looking for a get-away? I might be able to help you with that!".colorize(:light_
         end
     end
 
-    def farewell
-        puts "Safe travels! :)"
-    end
-end 
+    def list_deals
+        GetAways::Deals.each.with_index(1) do |job,index|
+        puts "#{index}. #{job.tile} - #{job.price} - #{job.url}"
+    end 
+end
