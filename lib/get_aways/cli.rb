@@ -4,9 +4,10 @@ class GetAways::CLI
 
     def call 
         greeting 
-        list_deals
+        enter_number
         Scraper.scrape_titles
         menu
+        list_deals
         farewell
     end
 
@@ -16,48 +17,29 @@ Looking for a get-away? I might be able to help you with that!".colorize(:light_
     end
 
     def list_deals
-        puts "Enter a number you'd like to read more about".colorize(:white)
-        puts <<-DOC 
-        Flight 1
-        Flight 2
-        Flight 3
-        Flight 4
-      DOC
+        puts "#{index}. #{job.tile} - #{job.price} - #{job.url}"
     end 
 
     def enter_number
-        until input.to_i.between?(1,GetAways::Deals.all.length) 
+       input = gets.strip
+       while input != "exit" do 
             puts "
- Enter a number to see a deal, type 'list' to look at another destination, or type 'exit' to leave.".colorize(:white)
+ Choose a deal (by number) that you're interested in, type 'list' to look at other getaways, or type 'exit' to leave."
     end
 
     def menu
         input = nil
         while input != 'exit'    
-            input = gets.strip.downcase
-            case input 
-            when "1"
-                puts " "
-                puts "--------------------------------------".colorize(:light_blue)
-            when "2" 
-                puts " "
-                puts "--------------------------------------".colorize(:light_blue)
-            when "3"
-                puts " "
-                puts "--------------------------------------".colorize(:light_blue)
-            when "4"
-                puts " "
-                puts "--------------------------------------".colorize(:light_blue)
-            when "list"
-                list_deals
-            else
+            input = gets.strip
+            if input <= 4 
+                GetAways::Deals.all.each.with_index(1) do |title, index|
+                    puts "#{index}. #{deal.title}"
+            elseif
                 puts "Sorry! I didn't understand that input. Please enter a number or 'exit' to leave."
-            end
-          end
         end
-      end
+    end
 
     def farewell
         puts "Safe travels! :)"
     end
-end
+end 
